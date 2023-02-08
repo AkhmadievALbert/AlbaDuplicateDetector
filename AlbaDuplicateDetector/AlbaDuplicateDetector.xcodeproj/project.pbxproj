@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A1C7CFB2993C30D00A1065F /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7CFA2993C30D00A1065F /* Sets.swift */; };
+		4A6B3E43298EBB9900EA6986 /* CodeDuplicationFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */; };
+		4A6B3E45298ECA1D00EA6986 /* DuplicateDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E44298ECA1D00EA6986 /* DuplicateDetectorError.swift */; };
+		4A6B3E47298ECFDE00EA6986 /* CodeLineTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E46298ECFDE00EA6986 /* CodeLineTokenizer.swift */; };
+		4A6B3E49298FB13100EA6986 /* ClassParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E48298FB13100EA6986 /* ClassParser.swift */; };
+		4A81DFAA29866FE0008D492A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFA929866FE0008D492A /* main.swift */; };
+		4A81DFB129866FFE008D492A /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFB029866FFE008D492A /* TokenType.swift */; };
+		4A81DFD729883416008D492A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFD629883416008D492A /* String+Extension.swift */; };
+		4ADA920E2992EA410079DC6F /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA920D2992EA410079DC6F /* Tree.swift */; };
+		4ADA92112992F2AF0079DC6F /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADA92102992F2AF0079DC6F /* SwiftSyntax */; };
+		4ADA92132992F2AF0079DC6F /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADA92122992F2AF0079DC6F /* SwiftSyntaxBuilder */; };
+		4ADA92152992F2AF0079DC6F /* SwiftSyntaxParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADA92142992F2AF0079DC6F /* SwiftSyntaxParser */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A81DFA429866FE0008D492A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4A1C7CFA2993C30D00A1065F /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
+		4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDuplicationFinder.swift; sourceTree = "<group>"; };
+		4A6B3E44298ECA1D00EA6986 /* DuplicateDetectorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateDetectorError.swift; sourceTree = "<group>"; };
+		4A6B3E46298ECFDE00EA6986 /* CodeLineTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLineTokenizer.swift; sourceTree = "<group>"; };
+		4A6B3E48298FB13100EA6986 /* ClassParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassParser.swift; sourceTree = "<group>"; };
+		4A81DFA629866FE0008D492A /* AlbaDuplicateDetector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlbaDuplicateDetector; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A81DFA929866FE0008D492A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4A81DFB029866FFE008D492A /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
+		4A81DFB229867193008D492A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		4A81DFD629883416008D492A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		4ADA920D2992EA410079DC6F /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A81DFA329866FE0008D492A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ADA92152992F2AF0079DC6F /* SwiftSyntaxParser in Frameworks */,
+				4ADA92112992F2AF0079DC6F /* SwiftSyntax in Frameworks */,
+				4ADA92132992F2AF0079DC6F /* SwiftSyntaxBuilder in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A1C7CF82993C11700A1065F /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				4A81DFB229867193008D492A /* AccountViewController.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		4A1C7CF92993C30300A1065F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4A1C7CFA2993C30D00A1065F /* Sets.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4A81DF9D29866FE0008D492A = {
+			isa = PBXGroup;
+			children = (
+				4A81DFA829866FE0008D492A /* AlbaDuplicateDetector */,
+				4A81DFA729866FE0008D492A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A81DFA729866FE0008D492A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A81DFA629866FE0008D492A /* AlbaDuplicateDetector */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A81DFA829866FE0008D492A /* AlbaDuplicateDetector */ = {
+			isa = PBXGroup;
+			children = (
+				4A1C7CF92993C30300A1065F /* Helpers */,
+				4A1C7CF82993C11700A1065F /* Example */,
+				4A81DFA929866FE0008D492A /* main.swift */,
+				4A81DFB029866FFE008D492A /* TokenType.swift */,
+				4A81DFD629883416008D492A /* String+Extension.swift */,
+				4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */,
+				4A6B3E44298ECA1D00EA6986 /* DuplicateDetectorError.swift */,
+				4A6B3E46298ECFDE00EA6986 /* CodeLineTokenizer.swift */,
+				4A6B3E48298FB13100EA6986 /* ClassParser.swift */,
+				4ADA920D2992EA410079DC6F /* Tree.swift */,
+			);
+			path = AlbaDuplicateDetector;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A81DFA529866FE0008D492A /* AlbaDuplicateDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A81DFAD29866FE0008D492A /* Build configuration list for PBXNativeTarget "AlbaDuplicateDetector" */;
+			buildPhases = (
+				4A81DFA229866FE0008D492A /* Sources */,
+				4A81DFA329866FE0008D492A /* Frameworks */,
+				4A81DFA429866FE0008D492A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlbaDuplicateDetector;
+			packageProductDependencies = (
+				4ADA92102992F2AF0079DC6F /* SwiftSyntax */,
+				4ADA92122992F2AF0079DC6F /* SwiftSyntaxBuilder */,
+				4ADA92142992F2AF0079DC6F /* SwiftSyntaxParser */,
+			);
+			productName = AlbaDuplicateDetector;
+			productReference = 4A81DFA629866FE0008D492A /* AlbaDuplicateDetector */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A81DF9E29866FE0008D492A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					4A81DFA529866FE0008D492A = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 4A81DFA129866FE0008D492A /* Build configuration list for PBXProject "AlbaDuplicateDetector" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A81DF9D29866FE0008D492A;
+			packageReferences = (
+				4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */,
+			);
+			productRefGroup = 4A81DFA729866FE0008D492A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A81DFA529866FE0008D492A /* AlbaDuplicateDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A81DFA229866FE0008D492A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A81DFAA29866FE0008D492A /* main.swift in Sources */,
+				4A6B3E45298ECA1D00EA6986 /* DuplicateDetectorError.swift in Sources */,
+				4A6B3E49298FB13100EA6986 /* ClassParser.swift in Sources */,
+				4A6B3E47298ECFDE00EA6986 /* CodeLineTokenizer.swift in Sources */,
+				4A81DFD729883416008D492A /* String+Extension.swift in Sources */,
+				4ADA920E2992EA410079DC6F /* Tree.swift in Sources */,
+				4A6B3E43298EBB9900EA6986 /* CodeDuplicationFinder.swift in Sources */,
+				4A1C7CFB2993C30D00A1065F /* Sets.swift in Sources */,
+				4A81DFB129866FFE008D492A /* TokenType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4A81DFAB29866FE0008D492A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A81DFAC29866FE0008D492A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4A81DFAE29866FE0008D492A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4A81DFAF29866FE0008D492A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A81DFA129866FE0008D492A /* Build configuration list for PBXProject "AlbaDuplicateDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A81DFAB29866FE0008D492A /* Debug */,
+				4A81DFAC29866FE0008D492A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A81DFAD29866FE0008D492A /* Build configuration list for PBXNativeTarget "AlbaDuplicateDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A81DFAE29866FE0008D492A /* Debug */,
+				4A81DFAF29866FE0008D492A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-syntax.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50700.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4ADA92102992F2AF0079DC6F /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+		4ADA92122992F2AF0079DC6F /* SwiftSyntaxBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxBuilder;
+		};
+		4ADA92142992F2AF0079DC6F /* SwiftSyntaxParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxParser;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4A81DF9E29866FE0008D492A /* Project object */;
+}
