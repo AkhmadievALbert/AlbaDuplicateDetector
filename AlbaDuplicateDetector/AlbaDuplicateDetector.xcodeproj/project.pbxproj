@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4A1C7CFB2993C30D00A1065F /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7CFA2993C30D00A1065F /* Sets.swift */; };
+		4A1C7CFE2993DBD700A1065F /* SwiftAST in Frameworks */ = {isa = PBXBuildFile; productRef = 4A1C7CFD2993DBD700A1065F /* SwiftAST */; };
+		4A1C7D002993DBD700A1065F /* SwiftAST+Tooling in Frameworks */ = {isa = PBXBuildFile; productRef = 4A1C7CFF2993DBD700A1065F /* SwiftAST+Tooling */; };
+		4A1C7D022993DBD700A1065F /* swift-ast in Frameworks */ = {isa = PBXBuildFile; productRef = 4A1C7D012993DBD700A1065F /* swift-ast */; };
+		4A1C7D052993DC1200A1065F /* ASTVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7D042993DC1200A1065F /* ASTVisitor.swift */; };
+		4A1C7D072993E00C00A1065F /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7D062993E00C00A1065F /* Example.swift */; };
+		4A1C7D0A2993EE4600A1065F /* AST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7D092993EE4600A1065F /* AST.swift */; };
 		4A6B3E43298EBB9900EA6986 /* CodeDuplicationFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */; };
 		4A6B3E45298ECA1D00EA6986 /* DuplicateDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E44298ECA1D00EA6986 /* DuplicateDetectorError.swift */; };
 		4A6B3E47298ECFDE00EA6986 /* CodeLineTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E46298ECFDE00EA6986 /* CodeLineTokenizer.swift */; };
@@ -15,10 +21,13 @@
 		4A81DFAA29866FE0008D492A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFA929866FE0008D492A /* main.swift */; };
 		4A81DFB129866FFE008D492A /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFB029866FFE008D492A /* TokenType.swift */; };
 		4A81DFD729883416008D492A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFD629883416008D492A /* String+Extension.swift */; };
+		4AB4BBEE299A9BAE00886209 /* TreeDuplicateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4BBED299A9BAE00886209 /* TreeDuplicateDetector.swift */; };
+		4AB4BBF0299A9BC400886209 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4BBEF299A9BC400886209 /* TreeNode.swift */; };
+		4AB4BBF3299AB44900886209 /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB4BBF2299AB44900886209 /* SwiftSyntax */; };
+		4AB4BBF5299AB44900886209 /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB4BBF4299AB44900886209 /* SwiftSyntaxBuilder */; };
+		4AB4BBF7299AB44900886209 /* SwiftSyntaxParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB4BBF6299AB44900886209 /* SwiftSyntaxParser */; };
+		4AB4BBFA299AB52000886209 /* SyntaxTreeDuplicateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4BBF9299AB52000886209 /* SyntaxTreeDuplicateDetector.swift */; };
 		4ADA920E2992EA410079DC6F /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA920D2992EA410079DC6F /* Tree.swift */; };
-		4ADA92112992F2AF0079DC6F /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADA92102992F2AF0079DC6F /* SwiftSyntax */; };
-		4ADA92132992F2AF0079DC6F /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADA92122992F2AF0079DC6F /* SwiftSyntaxBuilder */; };
-		4ADA92152992F2AF0079DC6F /* SwiftSyntaxParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADA92142992F2AF0079DC6F /* SwiftSyntaxParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		4A1C7CFA2993C30D00A1065F /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
+		4A1C7D042993DC1200A1065F /* ASTVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTVisitor.swift; sourceTree = "<group>"; };
+		4A1C7D062993E00C00A1065F /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		4A1C7D092993EE4600A1065F /* AST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AST.swift; sourceTree = "<group>"; };
 		4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDuplicationFinder.swift; sourceTree = "<group>"; };
 		4A6B3E44298ECA1D00EA6986 /* DuplicateDetectorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateDetectorError.swift; sourceTree = "<group>"; };
 		4A6B3E46298ECFDE00EA6986 /* CodeLineTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeLineTokenizer.swift; sourceTree = "<group>"; };
@@ -44,6 +56,9 @@
 		4A81DFB029866FFE008D492A /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		4A81DFB229867193008D492A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4A81DFD629883416008D492A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		4AB4BBED299A9BAE00886209 /* TreeDuplicateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDuplicateDetector.swift; sourceTree = "<group>"; };
+		4AB4BBEF299A9BC400886209 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
+		4AB4BBF9299AB52000886209 /* SyntaxTreeDuplicateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxTreeDuplicateDetector.swift; sourceTree = "<group>"; };
 		4ADA920D2992EA410079DC6F /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,9 +67,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADA92152992F2AF0079DC6F /* SwiftSyntaxParser in Frameworks */,
-				4ADA92112992F2AF0079DC6F /* SwiftSyntax in Frameworks */,
-				4ADA92132992F2AF0079DC6F /* SwiftSyntaxBuilder in Frameworks */,
+				4AB4BBF7299AB44900886209 /* SwiftSyntaxParser in Frameworks */,
+				4A1C7D022993DBD700A1065F /* swift-ast in Frameworks */,
+				4AB4BBF5299AB44900886209 /* SwiftSyntaxBuilder in Frameworks */,
+				4A1C7D002993DBD700A1065F /* SwiftAST+Tooling in Frameworks */,
+				4A1C7CFE2993DBD700A1065F /* SwiftAST in Frameworks */,
+				4AB4BBF3299AB44900886209 /* SwiftSyntax in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				4A81DFB229867193008D492A /* AccountViewController.swift */,
+				4A1C7D062993E00C00A1065F /* Example.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -75,6 +94,22 @@
 				4A1C7CFA2993C30D00A1065F /* Sets.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4A1C7D032993DC0300A1065F /* SwiftSyntax */ = {
+			isa = PBXGroup;
+			children = (
+				4A1C7D042993DC1200A1065F /* ASTVisitor.swift */,
+			);
+			path = SwiftSyntax;
+			sourceTree = "<group>";
+		};
+		4A1C7D082993EE3A00A1065F /* AST */ = {
+			isa = PBXGroup;
+			children = (
+				4A1C7D092993EE4600A1065F /* AST.swift */,
+			);
+			path = AST;
 			sourceTree = "<group>";
 		};
 		4A81DF9D29866FE0008D492A = {
@@ -96,6 +131,10 @@
 		4A81DFA829866FE0008D492A /* AlbaDuplicateDetector */ = {
 			isa = PBXGroup;
 			children = (
+				4AB4BBF8299AB50C00886209 /* SyntaxTreeDuplicateDetector */,
+				4AB4BBEC299A9BA200886209 /* TreeDuplicateDetector */,
+				4A1C7D082993EE3A00A1065F /* AST */,
+				4A1C7D032993DC0300A1065F /* SwiftSyntax */,
 				4A1C7CF92993C30300A1065F /* Helpers */,
 				4A1C7CF82993C11700A1065F /* Example */,
 				4A81DFA929866FE0008D492A /* main.swift */,
@@ -108,6 +147,23 @@
 				4ADA920D2992EA410079DC6F /* Tree.swift */,
 			);
 			path = AlbaDuplicateDetector;
+			sourceTree = "<group>";
+		};
+		4AB4BBEC299A9BA200886209 /* TreeDuplicateDetector */ = {
+			isa = PBXGroup;
+			children = (
+				4AB4BBED299A9BAE00886209 /* TreeDuplicateDetector.swift */,
+				4AB4BBEF299A9BC400886209 /* TreeNode.swift */,
+			);
+			path = TreeDuplicateDetector;
+			sourceTree = "<group>";
+		};
+		4AB4BBF8299AB50C00886209 /* SyntaxTreeDuplicateDetector */ = {
+			isa = PBXGroup;
+			children = (
+				4AB4BBF9299AB52000886209 /* SyntaxTreeDuplicateDetector.swift */,
+			);
+			path = SyntaxTreeDuplicateDetector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +183,12 @@
 			);
 			name = AlbaDuplicateDetector;
 			packageProductDependencies = (
-				4ADA92102992F2AF0079DC6F /* SwiftSyntax */,
-				4ADA92122992F2AF0079DC6F /* SwiftSyntaxBuilder */,
-				4ADA92142992F2AF0079DC6F /* SwiftSyntaxParser */,
+				4A1C7CFD2993DBD700A1065F /* SwiftAST */,
+				4A1C7CFF2993DBD700A1065F /* SwiftAST+Tooling */,
+				4A1C7D012993DBD700A1065F /* swift-ast */,
+				4AB4BBF2299AB44900886209 /* SwiftSyntax */,
+				4AB4BBF4299AB44900886209 /* SwiftSyntaxBuilder */,
+				4AB4BBF6299AB44900886209 /* SwiftSyntaxParser */,
 			);
 			productName = AlbaDuplicateDetector;
 			productReference = 4A81DFA629866FE0008D492A /* AlbaDuplicateDetector */;
@@ -160,7 +219,8 @@
 			);
 			mainGroup = 4A81DF9D29866FE0008D492A;
 			packageReferences = (
-				4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				4A1C7CFC2993DBD700A1065F /* XCRemoteSwiftPackageReference "swift-ast" */,
+				4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */,
 			);
 			productRefGroup = 4A81DFA729866FE0008D492A /* Products */;
 			projectDirPath = "";
@@ -176,11 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1C7D0A2993EE4600A1065F /* AST.swift in Sources */,
 				4A81DFAA29866FE0008D492A /* main.swift in Sources */,
 				4A6B3E45298ECA1D00EA6986 /* DuplicateDetectorError.swift in Sources */,
 				4A6B3E49298FB13100EA6986 /* ClassParser.swift in Sources */,
 				4A6B3E47298ECFDE00EA6986 /* CodeLineTokenizer.swift in Sources */,
 				4A81DFD729883416008D492A /* String+Extension.swift in Sources */,
+				4AB4BBEE299A9BAE00886209 /* TreeDuplicateDetector.swift in Sources */,
+				4AB4BBF0299A9BC400886209 /* TreeNode.swift in Sources */,
+				4A1C7D052993DC1200A1065F /* ASTVisitor.swift in Sources */,
+				4A1C7D072993E00C00A1065F /* Example.swift in Sources */,
+				4AB4BBFA299AB52000886209 /* SyntaxTreeDuplicateDetector.swift in Sources */,
 				4ADA920E2992EA410079DC6F /* Tree.swift in Sources */,
 				4A6B3E43298EBB9900EA6986 /* CodeDuplicationFinder.swift in Sources */,
 				4A1C7CFB2993C30D00A1065F /* Sets.swift in Sources */,
@@ -195,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -255,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -346,7 +414,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+		4A1C7CFC2993DBD700A1065F /* XCRemoteSwiftPackageReference "swift-ast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yanagiba/swift-ast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-syntax.git";
 			requirement = {
@@ -357,19 +433,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4ADA92102992F2AF0079DC6F /* SwiftSyntax */ = {
+		4A1C7CFD2993DBD700A1065F /* SwiftAST */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = 4A1C7CFC2993DBD700A1065F /* XCRemoteSwiftPackageReference "swift-ast" */;
+			productName = SwiftAST;
+		};
+		4A1C7CFF2993DBD700A1065F /* SwiftAST+Tooling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A1C7CFC2993DBD700A1065F /* XCRemoteSwiftPackageReference "swift-ast" */;
+			productName = "SwiftAST+Tooling";
+		};
+		4A1C7D012993DBD700A1065F /* swift-ast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A1C7CFC2993DBD700A1065F /* XCRemoteSwiftPackageReference "swift-ast" */;
+			productName = "swift-ast";
+		};
+		4AB4BBF2299AB44900886209 /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntax;
 		};
-		4ADA92122992F2AF0079DC6F /* SwiftSyntaxBuilder */ = {
+		4AB4BBF4299AB44900886209 /* SwiftSyntaxBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = 4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntaxBuilder;
 		};
-		4ADA92142992F2AF0079DC6F /* SwiftSyntaxParser */ = {
+		4AB4BBF6299AB44900886209 /* SwiftSyntaxParser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ADA920F2992F2AF0079DC6F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			package = 4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */;
 			productName = SwiftSyntaxParser;
 		};
 /* End XCSwiftPackageProductDependency section */

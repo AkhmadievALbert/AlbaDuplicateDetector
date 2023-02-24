@@ -6,8 +6,6 @@
 //
 
 import SwiftSyntax
-import SwiftSyntaxParser
-
 
 enum NodeType {
     case function(FunctionNode)
