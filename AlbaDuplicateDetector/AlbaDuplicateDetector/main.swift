@@ -12,56 +12,27 @@ import Foundation
 import SwiftSyntax
 import SwiftSyntaxParser
 
-private let file = "/Users/a.akhmadiev/Developer/diplom/AlbaDuplicateDetector/AlbaDuplicateDetector/AlbaDuplicateDetector/Example/Example.swift"
+private let dict = "/Users/a.akhmadiev/Developer/diplom/CodeExample/CodeExample"
 
-class ALbaVisitor : ASTVisitor {
+let fileService = FileService()
+let filesDict = fileService.getFileNames(containing: ConfigRepository.shared.fileGroups, inDirectory: ConfigRepository.shared.projectPath)
+print(filesDict)
 
-    var functions: [FunctionDeclaration] = []
-    var duplicates: [(FunctionDeclaration, FunctionDeclaration)] = []
+let astBuilder = ASTBuilder()
+var astClasses: [ASTClass] = []
 
-    func visit(_ function: FunctionDeclaration) throws -> Bool {
-        // visit this if statement
-        functions.append(function)
-        return true
-    }
-
-    func findFuncClones() {
-        for a in 0...functions.count-1 {
-            for b in 1...functions.count-1 {
-                let aFunc = functions[a]
-                let bFunc = functions[b]
-                if aFunc.signature.result?.textDescription == bFunc.signature.result?.textDescription {
-                    duplicates.append((aFunc, bFunc))
-                }
-            }
-        }
-    }
+for (key, filePaths) in filesDict {
+    astClasses = astBuilder.buildASTForFiles(with: filePaths, for: key)
+    print(astClasses)
 }
 
-do {
-    let sourceFile = try SourceReader.read(at: file)
-    let parser = Parser(source: sourceFile)
-
-    let myVisitor = ALbaVisitor()
-    let topLevelDecl = try parser.parse()
-    try myVisitor.traverse(topLevelDecl)
-    myVisitor.findFuncClones()
-    print(myVisitor.duplicates)
-} catch {
-    // handle errors
+let tupleCounts = astClasses.reduce(into: [:]) { counts, astClass in
+    counts[ASTClassStruct(astVars: astClass.astVars, astFuncs: astClass.astFuncs), default: 0] += 1
 }
 
-func a() -> Int? {
-    let a: Int? = .none
-    guard a != nil else { return nil }
-    return a
-}
+// Используйте словарь для фильтрации элементов, которые встречаются больше одного раза
+let duplicates = astClasses.filter { tupleCounts[ASTClassStruct(astVars: $0.astVars, astFuncs: $0.astFuncs), default: 0] > 1 }
 
-func b() -> Int? {
-    let b: Int? = .none
-    if let _b = b {
-        return _b
-    } else {
-        return nil
-    }
-}
+// Распечатайте найденные дубликаты
+print("Найдены дубликаты:")
+duplicates.forEach { print($0.name) }
