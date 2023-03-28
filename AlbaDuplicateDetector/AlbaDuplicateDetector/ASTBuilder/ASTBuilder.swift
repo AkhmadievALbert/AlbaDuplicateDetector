@@ -21,6 +21,8 @@ class MySyntaxRewriter: SyntaxRewriter {
         self.converter = converter
     }
 
+
+
     override func visit(_ node: ClassDeclSyntax) -> DeclSyntax {
         currentClass = ASTClass()
         currentClass?.name = node.identifier.text
@@ -40,15 +42,15 @@ class MySyntaxRewriter: SyntaxRewriter {
     override func visit(_ node: VariableDeclSyntax) -> DeclSyntax {
         guard
             let currentClass,
-            let name = node.bindings.first?.pattern.description,
-            let type = node.bindings.first?.typeAnnotation?.description
+            let name = node.bindings.first?.pattern.description.trimmingCharacters(in: [" "]),
+            let type = node.bindings.first?.typeAnnotation?.description.trimmingCharacters(in: [" "])
         else {
             return super.visit(node)
         }
 
         let astVar = ASTVar(
             name: name,
-            fieldNumber: node.startLocation(converter: converter).line ?? 0,
+            fieldNumber: 0, //node.startLocation(converter: converter).line ?? 0,
             type: type
         )
         currentClass.astVars.append(astVar)
@@ -64,7 +66,7 @@ class MySyntaxRewriter: SyntaxRewriter {
         }
         let astFunc = ASTFunc(
             name: node.signature.input.description,
-            fieldNumber: node.startLocation(converter: converter).line ?? 0,
+            fieldNumber: 0, //node.startLocation(converter: converter).line ?? 0,
             returnType: node.signature.output?.description ?? "Void",
             fieldMap: [:])
         currentClass.astFuncs.append(astFunc)
