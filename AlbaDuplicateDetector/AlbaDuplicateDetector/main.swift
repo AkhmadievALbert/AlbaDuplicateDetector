@@ -5,16 +5,12 @@
 //  Created by a.akhmadiev on 29.01.2023.
 //
 
-import AST
-import Parser
-import Source
 import Foundation
 import SwiftSyntax
 import SwiftSyntaxParser
 
-private let dict = "/Users/a.akhmadiev/Developer/diplom/CodeExample/CodeExample"
-
 let fileService = FileService()
+let resultService = ResultService()
 let filesDict = fileService.getFileNames(containing: ConfigRepository.shared.fileGroups, inDirectory: ConfigRepository.shared.projectPath)
 print(filesDict)
 
@@ -35,4 +31,25 @@ let duplicates = astClasses.filter { tupleCounts[ASTClassStruct(astVars: $0.astV
 
 // Распечатайте найденные дубликаты
 print("Найдены дубликаты:")
-duplicates.forEach { print($0.name) }
+duplicates.forEach {
+    var type: Result.DuplicateType?
+    switch $0 {
+    case $0 as ASTClass:
+        type = .class
+    default:
+        type = nil
+    }
+    var types = [Result.DuplicateType]()
+    type.map { types.append($0) }
+    resultService.writeResult(directory: ConfigRepository.shared.projectPath, results: [
+        .init(fileNames: [$0.name],
+              fieldNumbers: [$0.fieldNumber],
+              types: types)
+    ])
+    print($0.name)
+}
+
+
+if ConfigRepository.shared.isSaveByTree {
+    fileService.saveASTAsFile(inDirectory: ConfigRepository.shared.projectPath, ast: astClasses)
+}

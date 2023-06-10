@@ -7,17 +7,20 @@
 
 import Foundation
 
-struct ASTNode: Hashable {
+/// Основная нода для всего дерева
+struct ASTNode: Hashable, Codable {
     let astClass: ASTClass
     var children: [ASTNode]
 }
 
-struct ASTClassStruct: Hashable {
+/// Нужно для сравнения (для поиска дублирования)
+struct ASTClassStruct: Hashable, Codable {
     let astVars: [ASTVar]
     let astFuncs: [ASTFunc]
 }
 
-class ASTClass: Hashable {
+/// Нода описывающая класс
+class ASTClass: Hashable, Codable {
     var name: String = ""
     let fieldNumber: Int = 0
     var astVars: [ASTVar] = []
@@ -34,29 +37,32 @@ class ASTClass: Hashable {
     }
 }
 
-struct ASTVar: Hashable {
+/// Нода описывающая переменную
+struct ASTVar: Hashable, Codable {
     let name: String
     let fieldNumber: Int
     let type: String
+    var fieldMap: [String] = []
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(type)
-    }
-}
-
-struct ASTFunc: Hashable {
-    let name: String
-    let fieldNumber: Int
-    var returnType: String = "Void"
-    var fieldMap: [ASTVar : String] = [:]
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(returnType)
         hasher.combine(fieldMap)
     }
 }
 
-enum ASTNodeType {
+/// Нода описывающая функцию
+struct ASTFunc: Hashable, Codable {
+    let name: String
+    let fieldNumber: Int
+    var returnType: String = "Void"
+    var funcs: [ASTFunc]
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(returnType)
+    }
+}
+
+enum ASTNodeType: Codable {
     case classType
     case funcType
     case protocolType

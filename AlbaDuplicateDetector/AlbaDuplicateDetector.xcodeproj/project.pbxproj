@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		4A134AC329C6210600BCDDD2 /* AlbaVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A134AC229C6210600BCDDD2 /* AlbaVisitor.swift */; };
 		4A1C7CFB2993C30D00A1065F /* Sets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7CFA2993C30D00A1065F /* Sets.swift */; };
-		4A1C7D052993DC1200A1065F /* ASTVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7D042993DC1200A1065F /* ASTVisitor.swift */; };
 		4A1C7D072993E00C00A1065F /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7D062993E00C00A1065F /* Example.swift */; };
 		4A1C7D0A2993EE4600A1065F /* AST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C7D092993EE4600A1065F /* AST.swift */; };
+		4A56EF4D29F12B780000BC1E /* SwiftAST+Tooling in Frameworks */ = {isa = PBXBuildFile; productRef = 4A56EF4C29F12B780000BC1E /* SwiftAST+Tooling */; };
 		4A6B3E43298EBB9900EA6986 /* CodeDuplicationFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */; };
 		4A6B3E45298ECA1D00EA6986 /* DuplicateDetectorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E44298ECA1D00EA6986 /* DuplicateDetectorError.swift */; };
 		4A6B3E47298ECFDE00EA6986 /* CodeLineTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6B3E46298ECFDE00EA6986 /* CodeLineTokenizer.swift */; };
@@ -31,6 +31,8 @@
 		4AB4BBF5299AB44900886209 /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB4BBF4299AB44900886209 /* SwiftSyntaxBuilder */; };
 		4AB4BBF7299AB44900886209 /* SwiftSyntaxParser in Frameworks */ = {isa = PBXBuildFile; productRef = 4AB4BBF6299AB44900886209 /* SwiftSyntaxParser */; };
 		4AB4BBFA299AB52000886209 /* SyntaxTreeDuplicateDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB4BBF9299AB52000886209 /* SyntaxTreeDuplicateDetector.swift */; };
+		4AC8EB632A1EA39F009E3AAD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC8EB622A1EA39F009E3AAD /* Result.swift */; };
+		4AC8EB652A1EA467009E3AAD /* ResultServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC8EB642A1EA467009E3AAD /* ResultServiceProtocol.swift */; };
 		4ADA920E2992EA410079DC6F /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA920D2992EA410079DC6F /* Tree.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +51,6 @@
 /* Begin PBXFileReference section */
 		4A134AC229C6210600BCDDD2 /* AlbaVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbaVisitor.swift; sourceTree = "<group>"; };
 		4A1C7CFA2993C30D00A1065F /* Sets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sets.swift; sourceTree = "<group>"; };
-		4A1C7D042993DC1200A1065F /* ASTVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTVisitor.swift; sourceTree = "<group>"; };
 		4A1C7D062993E00C00A1065F /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		4A1C7D092993EE4600A1065F /* AST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AST.swift; sourceTree = "<group>"; };
 		4A6B3E42298EBB9900EA6986 /* CodeDuplicationFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDuplicationFinder.swift; sourceTree = "<group>"; };
@@ -71,6 +72,8 @@
 		4AB4BBED299A9BAE00886209 /* TreeDuplicateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeDuplicateDetector.swift; sourceTree = "<group>"; };
 		4AB4BBEF299A9BC400886209 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		4AB4BBF9299AB52000886209 /* SyntaxTreeDuplicateDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxTreeDuplicateDetector.swift; sourceTree = "<group>"; };
+		4AC8EB622A1EA39F009E3AAD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4AC8EB642A1EA467009E3AAD /* ResultServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultServiceProtocol.swift; sourceTree = "<group>"; };
 		4ADA920D2992EA410079DC6F /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A56EF4D29F12B780000BC1E /* SwiftAST+Tooling in Frameworks */,
 				4AB4BBF7299AB44900886209 /* SwiftSyntaxParser in Frameworks */,
 				4AB4BBF5299AB44900886209 /* SwiftSyntaxBuilder in Frameworks */,
 				4AB4BBF3299AB44900886209 /* SwiftSyntax in Frameworks */,
@@ -113,14 +117,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		4A1C7D032993DC0300A1065F /* SwiftSyntax */ = {
-			isa = PBXGroup;
-			children = (
-				4A1C7D042993DC1200A1065F /* ASTVisitor.swift */,
-			);
-			path = SwiftSyntax;
-			sourceTree = "<group>";
-		};
 		4A1C7D082993EE3A00A1065F /* AST */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +144,7 @@
 		4A81DFA829866FE0008D492A /* AlbaDuplicateDetector */ = {
 			isa = PBXGroup;
 			children = (
+				4AC8EB612A1EA391009E3AAD /* ResultService */,
 				4AA43FAB29C758FE00C01004 /* ASTBuilder */,
 				4AA43FA629C74B8B00C01004 /* FileService */,
 				4AA43FA129C7198B00C01004 /* Extensions */,
@@ -155,7 +152,6 @@
 				4AB4BBF8299AB50C00886209 /* SyntaxTreeDuplicateDetector */,
 				4AB4BBEC299A9BA200886209 /* TreeDuplicateDetector */,
 				4A1C7D082993EE3A00A1065F /* AST */,
-				4A1C7D032993DC0300A1065F /* SwiftSyntax */,
 				4A1C7CF92993C30300A1065F /* Helpers */,
 				4A1C7CF82993C11700A1065F /* Example */,
 				4A81DFA929866FE0008D492A /* main.swift */,
@@ -215,6 +211,15 @@
 			path = SyntaxTreeDuplicateDetector;
 			sourceTree = "<group>";
 		};
+		4AC8EB612A1EA391009E3AAD /* ResultService */ = {
+			isa = PBXGroup;
+			children = (
+				4AC8EB622A1EA39F009E3AAD /* Result.swift */,
+				4AC8EB642A1EA467009E3AAD /* ResultServiceProtocol.swift */,
+			);
+			path = ResultService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +240,7 @@
 				4AB4BBF2299AB44900886209 /* SwiftSyntax */,
 				4AB4BBF4299AB44900886209 /* SwiftSyntaxBuilder */,
 				4AB4BBF6299AB44900886209 /* SwiftSyntaxParser */,
+				4A56EF4C29F12B780000BC1E /* SwiftAST+Tooling */,
 			);
 			productName = AlbaDuplicateDetector;
 			productReference = 4A81DFA629866FE0008D492A /* AlbaDuplicateDetector */;
@@ -266,6 +272,7 @@
 			mainGroup = 4A81DF9D29866FE0008D492A;
 			packageReferences = (
 				4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				4A56EF4B29F12B780000BC1E /* XCRemoteSwiftPackageReference "swift-ast" */,
 			);
 			productRefGroup = 4A81DFA729866FE0008D492A /* Products */;
 			projectDirPath = "";
@@ -291,13 +298,14 @@
 				4AA4353829C7189C00C01004 /* Config.swift in Sources */,
 				4A6B3E47298ECFDE00EA6986 /* CodeLineTokenizer.swift in Sources */,
 				4A81DFD729883416008D492A /* String+Extension.swift in Sources */,
+				4AC8EB632A1EA39F009E3AAD /* Result.swift in Sources */,
 				4AB4BBEE299A9BAE00886209 /* TreeDuplicateDetector.swift in Sources */,
 				4AB4BBF0299A9BC400886209 /* TreeNode.swift in Sources */,
-				4A1C7D052993DC1200A1065F /* ASTVisitor.swift in Sources */,
 				4A1C7D072993E00C00A1065F /* Example.swift in Sources */,
 				4AB4BBFA299AB52000886209 /* SyntaxTreeDuplicateDetector.swift in Sources */,
 				4AA43FAA29C758C600C01004 /* ASTBuilder.swift in Sources */,
 				4AA43FAD29C7591700C01004 /* ASTNode.swift in Sources */,
+				4AC8EB652A1EA467009E3AAD /* ResultServiceProtocol.swift in Sources */,
 				4ADA920E2992EA410079DC6F /* Tree.swift in Sources */,
 				4A134AC329C6210600BCDDD2 /* AlbaVisitor.swift in Sources */,
 				4A6B3E43298EBB9900EA6986 /* CodeDuplicationFinder.swift in Sources */,
@@ -466,6 +474,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A56EF4B29F12B780000BC1E /* XCRemoteSwiftPackageReference "swift-ast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yanagiba/swift-ast.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-syntax.git";
@@ -477,6 +493,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A56EF4C29F12B780000BC1E /* SwiftAST+Tooling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A56EF4B29F12B780000BC1E /* XCRemoteSwiftPackageReference "swift-ast" */;
+			productName = "SwiftAST+Tooling";
+		};
 		4AB4BBF2299AB44900886209 /* SwiftSyntax */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4AB4BBF1299AB44900886209 /* XCRemoteSwiftPackageReference "swift-syntax" */;

@@ -5,10 +5,8 @@
 //  Created by a.akhmadiev on 08.02.2023.
 //
 
-import Foundation
 import AST
-import Parser
-import Source
+import Foundation
 
 private let file = "/Users/a.akhmadiev/Developer/diplom/AlbaDuplicateDetector/AlbaDuplicateDetector/AlbaDuplicateDetector/Example/Example.swift"
 

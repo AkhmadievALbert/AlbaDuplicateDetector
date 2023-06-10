@@ -48,4 +48,28 @@ final class FileService {
 
         return filesDict
     }
+
+    func saveASTAsFile(inDirectory directory: String, ast: [ASTClass]) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(ast)
+            let path = "\(directory)/ast.json"
+            try data.write(to: URL(fileURLWithPath: path))
+        } catch {
+            print(error)
+        }
+    }
+
+    func getASTFromFile(inDirectory directory: String) -> [ASTClass] {
+        do {
+            let path = "\(directory)/ast.json"
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let decoder = JSONDecoder()
+            let ast = try decoder.decode([ASTClass].self, from: data)
+            return ast
+        } catch {
+            print(error)
+            return []
+        }
+    }
 }

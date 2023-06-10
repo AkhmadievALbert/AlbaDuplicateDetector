@@ -23,11 +23,15 @@ class TreeDuplicateDetector {
         for child in node.children {
             childStrings.append(serialize(child))
         }
-        let curr = "\(node.val)\(childStrings.sorted().joined(separator: ","))"
+        let curr = hash(val: node.val)
         count[curr, default: 0] += 1
-        if count[curr] == 2 {
+        if count[curr] ?? 0 > 1 {
             ans.append(node)
         }
         return curr
     }
+}
+
+func hash(val: String) -> String {
+    return val
 }
