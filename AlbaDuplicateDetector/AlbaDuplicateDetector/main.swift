@@ -19,15 +19,16 @@ var astClasses: [ASTClass] = []
 
 for (key, filePaths) in filesDict {
     astClasses = astBuilder.buildASTForFiles(with: filePaths, for: key)
+    print("ALBAaaa")
     print(astClasses)
 }
 
 let tupleCounts = astClasses.reduce(into: [:]) { counts, astClass in
-    counts[ASTClassStruct(astVars: astClass.astVars, astFuncs: astClass.astFuncs), default: 0] += 1
+    counts[ASTClassStruct(astVars: astClass.astVars.map { $0 }, astFuncs: astClass.astFuncs.map { $0 }), default: 0] += 1
 }
 
 // Используйте словарь для фильтрации элементов, которые встречаются больше одного раза
-let duplicates = astClasses.filter { tupleCounts[ASTClassStruct(astVars: $0.astVars, astFuncs: $0.astFuncs), default: 0] > 1 }
+let duplicates = astClasses.filter { tupleCounts[ASTClassStruct(astVars: $0.astVars.map { $0 }, astFuncs: $0.astFuncs.map { $0 }), default: 0] > 1 }
 
 // Распечатайте найденные дубликаты
 print("Найдены дубликаты:")

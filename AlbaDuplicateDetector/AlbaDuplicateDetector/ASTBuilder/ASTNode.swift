@@ -20,52 +20,26 @@ struct ASTClassStruct: Hashable, Codable {
 }
 
 /// Нода описывающая класс
-class ASTClass: Hashable, Codable {
-    var name: String = ""
-    let fieldNumber: Int = 0
-    var astVars: [ASTVar] = []
-    var astFuncs: [ASTFunc] = []
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(astFuncs)
-        hasher.combine(astVars)
-    }
-
-    static func == (lhs: ASTClass, rhs: ASTClass) -> Bool {
-        lhs.astFuncs == rhs.astFuncs &&
-        lhs.astVars == lhs.astVars
-    }
+struct ASTClass: Hashable, Codable {
+    @NotHashable var name: String
+    @NotHashable var fieldNumber: Int
+    var astVars: Set<ASTVar> = []
+    var astFuncs: Set<ASTFunc> = []
 }
 
 /// Нода описывающая переменную
 struct ASTVar: Hashable, Codable {
-    let name: String
-    let fieldNumber: Int
-    let type: String
-    var fieldMap: [String] = []
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(type)
-        hasher.combine(fieldMap)
-    }
+    @NotHashable var name: String
+    @NotHashable var fieldNumber: Int
+    var type: String
+    var fieldsChanged: [String:Int] = [:]
+    var funcsDidTrigger: [String:Int] = [] 
 }
 
 /// Нода описывающая функцию
 struct ASTFunc: Hashable, Codable {
-    let name: String
-    let fieldNumber: Int
+    @NotHashable var name: String
+    @NotHashable var fieldNumber: Int
     var returnType: String = "Void"
     var funcs: [ASTFunc]
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(returnType)
-    }
-}
-
-enum ASTNodeType: Codable {
-    case classType
-    case funcType
-    case protocolType
-    case varType
-    case structType
 }

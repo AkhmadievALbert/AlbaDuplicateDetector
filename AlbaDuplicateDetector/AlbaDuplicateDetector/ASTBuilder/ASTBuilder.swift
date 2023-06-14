@@ -13,8 +13,8 @@ import SwiftSyntaxBuilder
 
 class MySyntaxRewriter: SyntaxRewriter {
 
+    var currentClassIndex = -1
     var astClasses: [ASTClass] = []
-    var currentClass: ASTClass?
     private let converter: SourceLocationConverter
 
     init(converter: SourceLocationConverter) {
@@ -22,24 +22,23 @@ class MySyntaxRewriter: SyntaxRewriter {
     }
 
     override func visit(_ node: ClassDeclSyntax) -> DeclSyntax {
-        currentClass = ASTClass()
-        currentClass?.name = node.identifier.text
-        astClasses.append(currentClass!)
+        currentClassIndex += 1
+        let currentClass = ASTClass(name: node.identifier.text, fieldNumber: node.startLocation(converter: converter).line ?? 0)
+        astClasses.append(currentClass)
 
         return super.visit(node)
     }
 
     override func visit(_ node: StructDeclSyntax) -> DeclSyntax {
-        currentClass = ASTClass()
-        currentClass?.name = node.identifier.text
-        astClasses.append(currentClass!)
+        currentClassIndex += 1
+        let currentClass = ASTClass(name: node.identifier.text, fieldNumber: node.startLocation(converter: converter).line ?? 0)
+        astClasses.append(currentClass)
 
         return super.visit(node)
     }
 
     override func visit(_ node: VariableDeclSyntax) -> DeclSyntax {
         guard
-            let currentClass,
             let name = node.bindings.first?.pattern.description.trimmingCharacters(in: .whitespacesAndNewlines),
             let type = node.bindings.first?.typeAnnotation?.description.trimmingCharacters(in: .whitespacesAndNewlines)
         else {
@@ -48,48 +47,68 @@ class MySyntaxRewriter: SyntaxRewriter {
 
         let astVar = ASTVar(
             name: name,
-            fieldNumber: 0, //node.startLocation(converter: converter).line ?? 0,
+            fieldNumber: node.startLocation(converter: converter).line ?? 0,
             type: type
         )
-        currentClass.astVars.append(astVar)
+        var currentClass = astClasses[currentClassIndex]
+        currentClass.astVars.insert(astVar)
+        astClasses[currentClassIndex] = currentClass
         return super.visit(node)
     }
 
     override func visit(_ node: FunctionDeclSyntax) -> DeclSyntax {
-        guard
-            let currentClass
-        else {
-            return super.visit(node)
-        }
+        var currentClass = astClasses[currentClassIndex]
         let astFunc = ASTFunc(
-            name: node.signature.input.description,
-            fieldNumber: 0, //node.startLocation(converter: converter).line ?? 0,
+            name: node.identifier.text,
+            fieldNumber: node.startLocation(converter: converter).line ?? 0,
             returnType: node.signature.output?.description ?? "Void",
-            funcs: [])
-        currentClass.astFuncs.append(astFunc)
-        return super.visit(node)
-    }
-}
+            funcs: []
+        )
 
-class FuncVisitor: SyntaxRewriter {
+        node.body?.statements.forEach { statement in
+            var astVar: ASTVar?
+            if let functionCallExprSyntax = FunctionCallExprSyntax(statement.item) {
 
-    private let classFields: [ASTVar]
+                if let calledExpression = MemberAccessExprSyntax(functionCallExprSyntax.calledExpression._syntaxNode) {
 
-    var vars: [ASTVar : String] = [:]
+                    if let base = calledExpression.base {
+                        if let superSyntax = SuperRefExprSyntax(base._syntaxNode) { return }
+                        if let identifierExprSyntax = IdentifierExprSyntax(base._syntaxNode) {
+                            let name = identifierExprSyntax.identifier.text
+                            if let firstLet = currentClass.astVars.first(where: { $0.name == name }) {
+                                astVar = firstLet
+                            } else {
+                                astVar = ASTVar(name: name, fieldNumber: 0, type: name)
+                            }
+                        }
+                        guard var astVar else { return }
+                        let funcDidTrigger = calledExpression.name.text
+                        astVar.funcsDidTrigger[funcDidTrigger] = astVar.funcsDidTrigger[funcDidTrigger] ?? 0 + 1
+                    }
+                }
+                print(1)
+            } else if let sequenceExprSyntax = SequenceExprSyntax(statement.item) {
 
-    init(classFields: [ASTVar]) {
-        self.classFields = classFields
-    }
+                var astVar: ASTVar?
+                sequenceExprSyntax.elements.forEach { element in
 
-    override func visit(_ node: VariableDeclSyntax) -> DeclSyntax {
-        guard
-            let name = node.bindings.first?.pattern.description,
-            let type = node.bindings.first?.typeAnnotation?.description
-        else {
-            return super.visit(node)
+                    if let exprSyntax = ExprSyntax(element._syntaxNode) {
+                        if let base = IdentifierExprSyntax(exprSyntax._syntaxNode) {
+                            let letName = base.identifier.text
+                            if let firstLet = currentClass.astVars.first(where: { $0.name == letName }) {
+                                astVar = firstLet
+                            } else {
+                                astVar = ASTVar(name: letName, fieldNumber: 0, type: letName)
+                            }
+                        }
+                    }
+
+                }
+            }
         }
-        print(name)
-        print(type)
+
+        currentClass.astFuncs.insert(astFunc)
+        astClasses[currentClassIndex] = currentClass
         return super.visit(node)
     }
 }

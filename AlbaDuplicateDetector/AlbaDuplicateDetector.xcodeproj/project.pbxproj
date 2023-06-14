@@ -19,6 +19,9 @@
 		4A81DFAA29866FE0008D492A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFA929866FE0008D492A /* main.swift */; };
 		4A81DFB129866FFE008D492A /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFB029866FFE008D492A /* TokenType.swift */; };
 		4A81DFD729883416008D492A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81DFD629883416008D492A /* String+Extension.swift */; };
+		4AA26DEC2A35A8BC00E9DB73 /* NotHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA26DEB2A35A8BC00E9DB73 /* NotHashable.swift */; };
+		4AA26DEE2A35AAFE00E9DB73 /* areHashsSimilar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA26DED2A35AAFE00E9DB73 /* areHashsSimilar.swift */; };
+		4AA279112A3873BC00E9DB73 /* FindDuplicationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA279102A3873BC00E9DB73 /* FindDuplicationsService.swift */; };
 		4AA4353829C7189C00C01004 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA4353729C7189C00C01004 /* Config.swift */; };
 		4AA43FA329C719A100C01004 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA43FA229C719A100C01004 /* Bundle+extension.swift */; };
 		4AA43FA829C74BAB00C01004 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA43FA729C74BAB00C01004 /* FileService.swift */; };
@@ -62,6 +65,9 @@
 		4A81DFB029866FFE008D492A /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 		4A81DFB229867193008D492A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		4A81DFD629883416008D492A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		4AA26DEB2A35A8BC00E9DB73 /* NotHashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotHashable.swift; sourceTree = "<group>"; };
+		4AA26DED2A35AAFE00E9DB73 /* areHashsSimilar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = areHashsSimilar.swift; sourceTree = "<group>"; };
+		4AA279102A3873BC00E9DB73 /* FindDuplicationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDuplicationsService.swift; sourceTree = "<group>"; };
 		4AA4353729C7189C00C01004 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		4AA43FA229C719A100C01004 /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		4AA43FA529C71DF400C01004 /* Config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Config.json; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				4A1C7CFA2993C30D00A1065F /* Sets.swift */,
+				4AA26DEB2A35A8BC00E9DB73 /* NotHashable.swift */,
+				4AA26DED2A35AAFE00E9DB73 /* areHashsSimilar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 		4A81DFA829866FE0008D492A /* AlbaDuplicateDetector */ = {
 			isa = PBXGroup;
 			children = (
+				4AA2790F2A38739100E9DB73 /* FindDuplicatins */,
 				4AC8EB612A1EA391009E3AAD /* ResultService */,
 				4AA43FAB29C758FE00C01004 /* ASTBuilder */,
 				4AA43FA629C74B8B00C01004 /* FileService */,
@@ -166,6 +175,14 @@
 				4AA43FA529C71DF400C01004 /* Config.json */,
 			);
 			path = AlbaDuplicateDetector;
+			sourceTree = "<group>";
+		};
+		4AA2790F2A38739100E9DB73 /* FindDuplicatins */ = {
+			isa = PBXGroup;
+			children = (
+				4AA279102A3873BC00E9DB73 /* FindDuplicationsService.swift */,
+			);
+			path = FindDuplicatins;
 			sourceTree = "<group>";
 		};
 		4AA43FA129C7198B00C01004 /* Extensions */ = {
@@ -288,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA279112A3873BC00E9DB73 /* FindDuplicationsService.swift in Sources */,
 				4A1C7D0A2993EE4600A1065F /* AST.swift in Sources */,
 				4AA43FA829C74BAB00C01004 /* FileService.swift in Sources */,
 				4AA43FA329C719A100C01004 /* Bundle+extension.swift in Sources */,
@@ -300,7 +318,9 @@
 				4A81DFD729883416008D492A /* String+Extension.swift in Sources */,
 				4AC8EB632A1EA39F009E3AAD /* Result.swift in Sources */,
 				4AB4BBEE299A9BAE00886209 /* TreeDuplicateDetector.swift in Sources */,
+				4AA26DEE2A35AAFE00E9DB73 /* areHashsSimilar.swift in Sources */,
 				4AB4BBF0299A9BC400886209 /* TreeNode.swift in Sources */,
+				4AA26DEC2A35A8BC00E9DB73 /* NotHashable.swift in Sources */,
 				4A1C7D072993E00C00A1065F /* Example.swift in Sources */,
 				4AB4BBFA299AB52000886209 /* SyntaxTreeDuplicateDetector.swift in Sources */,
 				4AA43FAA29C758C600C01004 /* ASTBuilder.swift in Sources */,
