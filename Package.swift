@@ -8,7 +8,7 @@ let package = Package(
     platforms: [
         .macOS(.v10_15),
         .iOS(.v13),
-    ]
+    ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-syntax.git", from: "0.50700.1"),
     ],
