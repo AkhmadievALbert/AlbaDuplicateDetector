@@ -5,8 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "AlbaDuplicateDetector",
+    platforms: [
+        .macOS(.v10_15),
+        .iOS(.v13),
+    ]
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "0.50300.0"),
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "0.50700.1"),
     ],
     targets: [
         .executableTarget(

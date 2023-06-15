@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import SwiftSyntax
-import SwiftSyntaxParser
 
 if CommandLine.arguments.count == 2 && CommandLine.arguments[1] == "run" {
     let main = AlbaDuplicationDetectorMain()
