@@ -33,7 +33,7 @@ struct ASTVar: Hashable, Codable {
     @NotHashable var fieldNumber: Int
     var type: String
     var fieldsChanged: [String:Int] = [:]
-    var funcsDidTrigger: [String:Int] = [] 
+    var funcsDidTrigger: [String:Int] = [:] 
 }
 
 /// Нода описывающая функцию

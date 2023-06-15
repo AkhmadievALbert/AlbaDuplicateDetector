@@ -60,6 +60,17 @@ final class FileService {
         }
     }
 
+    func saveResultsFile(inDirectory directory: String, results: [Result]) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(results)
+            let path = "\(directory)/result.json"
+            try data.write(to: URL(fileURLWithPath: path))
+        } catch {
+            print(error)
+        }
+    }
+
     func getASTFromFile(inDirectory directory: String) -> [ASTClass] {
         do {
             let path = "\(directory)/ast.json"

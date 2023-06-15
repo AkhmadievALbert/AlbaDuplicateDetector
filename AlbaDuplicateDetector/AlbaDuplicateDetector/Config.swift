@@ -18,7 +18,7 @@ final class ConfigRepository {
 
     private lazy var config: Config = {
         let decoder = JSONDecoder()
-        let json = try! Data(contentsOf: URL(fileURLWithPath: "/Users/a.akhmadiev/Developer/diplom/AlbaDuplicateDetector/AlbaDuplicateDetector/AlbaDuplicateDetector/Config.json"))
+        let json = try! Data(contentsOf: URL(fileURLWithPath: "../../../../../AlbaDuplicateDetector/Config.json"))
         return try! decoder.decode(Config.self, from: json)
     }()
 
