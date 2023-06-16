@@ -20,7 +20,7 @@ let package = Package(
     targets: [
         .target(
             name: "MyProject",
-            dependencies: ["DuplicateCodeChecker"]),
+            dependencies: ["AlbaDuplicateDetector"]),
         .testTarget(
             name: "MyProjectTests",
             dependencies: ["MyProject"]),
