@@ -11,6 +11,3 @@ if CommandLine.arguments.count == 2 && CommandLine.arguments[1] == "run" {
     let main = AlbaDuplicationDetectorMain()
     main.run()
 }
-
-let main = AlbaDuplicationDetectorMain()
-main.run()
